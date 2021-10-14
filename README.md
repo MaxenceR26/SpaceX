@@ -9,7 +9,7 @@
 
     to use the software you need Python as well as PIP to install the modules.
 
-##Install Python : 
+## Install Python : 
 
 Go to Microsoft Store And Search Python 3.9 And Install this.
 
@@ -17,11 +17,11 @@ Go to Microsoft Store And Search Python 3.9 And Install this.
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-###If you not PIP :
+### If you not PIP :
 
 python -m pip install YOUR MODULE
 
-###If you have PIP : 
+### If you have PIP : 
 
 pip install YOUR MODULE
 
