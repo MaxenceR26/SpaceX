@@ -13,7 +13,7 @@
 
 Go to Microsoft Store And Search Python 3.9 And Install this.
 
-##Install Pip with Curl :
+## Install Pip with Curl :
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
