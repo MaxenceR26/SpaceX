@@ -5,7 +5,7 @@
 
     I developed software to scrape data on SpaceX:
 
-    Capsules, Rockets, Cores, Roadsters, Dragon
+    Capsules, Rockets, Cores, Roadsters, SpaceX Info
 
     to use the software you need Python as well as PIP to install the modules.
 
