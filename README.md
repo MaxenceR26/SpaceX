@@ -9,9 +9,17 @@
 
     to use the software you need Python as well as PIP to install the modules.
 
-## Install Python : 
-
-Go to Microsoft Store And Search Python 3.9 And Install this.
+## How to run this project
+1. Install Python3.9. [Click here](https://www.python.org/downloads/)
+1. Clone this repository: `git clone https://github.com/MaxenceR26/SpaceX`
+1. Install virtualenv package: `pip install virtualenv`
+1. Create the virtual environment:
+    1. Windows: `C:\>c:\Python35\python -m venv c:\path\to\myenv`. The "path\to\myenv" must be the projects folder
+    1. Linux, inside the projects folder: `python3.9 -m venv env`
+1. Start the virtual environment:
+    1. Windows: `C:\>venv\Scripts\activate.bat`
+    1. Linux: `source venv/bin/activate`
+1. Install the dependencies: `pip install -r requirements.txt`
 
 ## Install Pip with Curl :
 
