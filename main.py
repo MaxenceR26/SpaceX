@@ -1,6 +1,6 @@
 from pycenter import center
 from pystyle import Colorate, Colors
-from os import system
+from sys import platform
 
 from data.capsules import capsules_requests
 from data.roadster import roadsters_requests
@@ -34,15 +34,35 @@ def title():
     """
 
     print(Colorate.Horizontal(Colors.purple_to_blue, center(title_text)))
+    
+    
 
+    
+
+def clearScreen(os):
+    """
+    Function to clear terminal/cmd screen compatible with Linux, Mac and Windows
+    """
+    from subprocess import call
+    if os == 'unix':
+        command = 'clear'
+    else:
+        command = 'cls'
+    call(command, shell=True)
 
 def main():
-    system("cls")
+    ## Cheking the system's OS
+    if platform not in ('win32', 'cygwin'):
+        os = 'unix'
+    else:
+        os = 'windows'
+
+    clearScreen(os)
     title()
     while True:
         choose = int(input("SpaceX -> "))
         if choose == 1:
-            system("cls")
+            clearScreen(os)
             title()
             capsules_requests()
             return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
@@ -51,43 +71,44 @@ def main():
             if return_choice.lower()[0:1] == "n":
                 main()
         if choose == 2:
-            system("cls")
+            clearScreen(os)
             title()
             rockets_requests()
             return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
             if return_choice.lower()[0:1] == "y":
-                break
+                exit()
             if return_choice.lower()[0:1] == "n":
                 main()
         if choose == 3:
-            system("cls")
+            clearScreen(os)
             title()
             roadsters_requests()
             return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
             if return_choice.lower()[0:1] == "y":
-                break
+                exit()
             if return_choice.lower()[0:1] == "n":
                 main()
         if choose == 4:
-            system("cls")
+            clearScreen(os)
             title()
             info_spacex()
             return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
             if return_choice.lower()[0:1] == "y":
-                break
+                exit()
             if return_choice.lower()[0:1] == "n":
                 main()
         if choose == 5:
-            system("cls")
+            clearScreen(os)
             title()
             cores_requests()
             return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
             if return_choice.lower()[0:1] == "y":
-                break
+                exit()
             if return_choice.lower()[0:1] == "n":
                 main()
         if choose == 10:
-            break
+            exit()
 
 
-main()
+if __name__ == '__main__':
+    main()
