@@ -1,4 +1,4 @@
-from pystyle import Colorate, Colors, Center
+from pystyle import Colorate, Colors, Center, System, Anime
 from sys import platform
 
 from data.Ships import ships_requests
@@ -12,8 +12,42 @@ from data.spacex import info_spacex
 from data.rockets import rockets_requests
 from data.cores import cores_requests
 
-
 # https://api.spacexdata.com/v3
+
+logo = """                                                   -- __
+                                                 ~ (@)  ~~~---_
+                                               {     `-_~,,,,,,)
+                                               {    (_  ',
+                                                ~    . = _',
+                                                 ~    '.  =-'
+                                                   ~     :
+.                                                -~     ('');
+'.                                         --~        \  \ ;
+  '.-_                                   -~            \  \;      _-=,.
+     -~- _                          -~                 {  '---- _'-=,.
+       ~- _~-  _              _ -~                     ~---------=,.`
+            ~-  ~~-----~~~~~~       .+++~~~~~~~~-__   /
+                ~-   __            {   -     +   }   /
+                         ~- ______{_    _ -=\ / /_ ~
+                             :      ~--~    // /         ..-
+                             :   / /      // /         ((
+                             :  / /      {   `-------,. ))
+                             :   /        ''=--------. }o
+                .=._________,'  )                     ))
+                )  _________ -''                     ~~
+               / /  _ _
+              (_.-.'O'-'.
+
+
+                    By Kijusu#2614 | IG : _maxence26
+"""
+
+
+def initialization():
+    System.Size(180, 50)
+    System.Title("SpaceX")
+    Anime.Fade(text=Center.Center(logo), color=Colors.purple_to_blue, mode=Colorate.Vertical, enter=True)
+
 
 def title():
     title_text = """
@@ -96,4 +130,5 @@ def main():
 
 
 if __name__ == '__main__':
+    initialization()
     main()
