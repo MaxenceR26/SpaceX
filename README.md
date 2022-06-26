@@ -31,7 +31,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 ### or
 
-pip install requirements.txt
+`pip install requirements.txt`
 
 ## Menu
 
