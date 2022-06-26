@@ -12,6 +12,6 @@ def capsules_requests():
                 print(
                     f"Capsule : {data[capsule]['capsule_serial']} -> \n",
                     f"• ID : {data[capsule]['capsule_id']}\n",
-                    f"• STATUS : {data[capsule]['status']}\n",
-                    f"• MISSIONS : {data[capsule]['missions'][mission]['name']}\n",
+                    f"• Status : {data[capsule]['status']}\n",
+                    f"• Missions : {data[capsule]['missions'][mission]['name']}\n",
                 )

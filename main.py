@@ -1,8 +1,12 @@
-from pycenter import center
-from pystyle import Colorate, Colors
+from pystyle import Colorate, Colors, Center
 from sys import platform
 
+from data.Ships import ships_requests
 from data.capsules import capsules_requests
+from data.history import history_requests
+from data.landingpads import landspad_requests
+from data.missions import missions_requests
+from data.payloads import payloads_requests
 from data.roadster import roadsters_requests
 from data.spacex import info_spacex
 from data.rockets import rockets_requests
@@ -25,19 +29,44 @@ def title():
                                                               
 
 
-        - 1 : Look Capsules         - 4 : Info SpaceX
-        - 2 : Look Rockets          - 5 : Look Cores
-        - 3 : Look Roadsters    
+        - 1 : Look Capsules         - 6 : Info SpaceX
+        - 2 : Look Rockets          - 7 : Look Cores
+        - 3 : Look Roadsters        - 8 : Look Ships
+        - 4 : Look Payloads         - 9 : Look Missions
+        - 5 : Look Landing Pads     - 10 : Look History
+
                         
-                        - 10 : Exit
+                        - 11 : Exit
 
     """
 
-    print(Colorate.Horizontal(Colors.purple_to_blue, center(title_text)))
-    
-    
+    print(Colorate.Horizontal(Colors.purple_to_blue, Center.XCenter(title_text)))
 
-    
+
+def switch(number, system):
+    numbers = {
+        1: capsules_requests,
+        2: rockets_requests,
+        3: roadsters_requests,
+        4: payloads_requests,
+        5: landspad_requests,
+        6: info_spacex,
+        7: cores_requests,
+        8: ships_requests,
+        9: missions_requests,
+        10: history_requests,
+        11: exit,
+
+    }
+    clearScreen(system)
+    title()
+    numbers.get(number)()
+    yes_or_no = input("Exit ? ( Y - N ) -> ")
+    if yes_or_no.lower()[0:1] == 'y':
+        exit()
+    elif yes_or_no.lower()[0:1] == 'n':
+        main()
+
 
 def clearScreen(os):
     """
@@ -50,8 +79,9 @@ def clearScreen(os):
         command = 'cls'
     call(command, shell=True)
 
+
 def main():
-    ## Cheking the system's OS
+    # Checking the system's OS
     if platform not in ('win32', 'cygwin'):
         os = 'unix'
     else:
@@ -61,53 +91,8 @@ def main():
     title()
     while True:
         choose = int(input("SpaceX -> "))
-        if choose == 1:
-            clearScreen(os)
-            title()
-            capsules_requests()
-            return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
-            if return_choice.lower()[0:1] == "y":
-                exit()
-            if return_choice.lower()[0:1] == "n":
-                main()
-        if choose == 2:
-            clearScreen(os)
-            title()
-            rockets_requests()
-            return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
-            if return_choice.lower()[0:1] == "y":
-                exit()
-            if return_choice.lower()[0:1] == "n":
-                main()
-        if choose == 3:
-            clearScreen(os)
-            title()
-            roadsters_requests()
-            return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
-            if return_choice.lower()[0:1] == "y":
-                exit()
-            if return_choice.lower()[0:1] == "n":
-                main()
-        if choose == 4:
-            clearScreen(os)
-            title()
-            info_spacex()
-            return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
-            if return_choice.lower()[0:1] == "y":
-                exit()
-            if return_choice.lower()[0:1] == "n":
-                main()
-        if choose == 5:
-            clearScreen(os)
-            title()
-            cores_requests()
-            return_choice = input(Colorate.Color(Colors.purple, "Exit ? Y - N : "))
-            if return_choice.lower()[0:1] == "y":
-                exit()
-            if return_choice.lower()[0:1] == "n":
-                main()
-        if choose == 10:
-            exit()
+        switch(number=choose, system=os)
+        break
 
 
 if __name__ == '__main__':
