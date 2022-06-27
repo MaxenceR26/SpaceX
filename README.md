@@ -25,16 +25,17 @@
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-### If you not PIP :
+## Install requirements.txt
 
-python -m pip install YOUR MODULE
+`python -m pip install requirements.txt`
 
-### If you have PIP : 
+### or
 
-pip install YOUR MODULE
+`pip install requirements.txt`
 
+## Menu
 
-![SpaceX-Img](/image/SpaceX-R.png)
+![SpaceX-Img](/image/SpaceX-Readme.png)
 
 
 
