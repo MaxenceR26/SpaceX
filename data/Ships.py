@@ -6,7 +6,12 @@ def ships_requests():
     request = requests.get(url)
     data = request.json()
 
+    counter = 0
     for ships in range(len(data)):
+        counter += 1
+        if counter > 2:
+            input("Continue...")
+            counter = 0
         print(
             f"Ship name : {data[ships]['ship_name']} -> \n",
             f"• ID : {data[ships]['ship_id']}\n",

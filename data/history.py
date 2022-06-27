@@ -6,7 +6,12 @@ def history_requests():
     request = requests.get(url)
     data = request.json()
 
+    counter = 0
     for history in range(len(data)):
+        counter += 1
+        if counter > 2:
+            input("Continue...")
+            counter = 0
         print(
             f"• Title : {data[history]['title']}\n",
             f"• ID : {data[history]['id']}\n",

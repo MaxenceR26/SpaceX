@@ -6,7 +6,12 @@ def rockets_requests():
     request = requests.get(url)
     data = request.json()
 
+    counter = 0
     for rockets in range(len(data)):
+        counter += 1
+        if counter > 2:
+            input("Continue...")
+            counter = 0
         print(
             f"• Name : {data[rockets]['rocket_name']}\n",
             f"• ID : {data[rockets]['id']}\n",

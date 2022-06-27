@@ -5,8 +5,12 @@ def missions_requests():
     url = "https://api.spacexdata.com/v3/missions"
     request = requests.get(url)
     data = request.json()
-
+    counter = 0
     for missions in range(len(data)):
+        counter += 1
+        if counter > 2:
+            input("Continue...")
+            counter = 0
         print(
             f"• Mission Name : {data[missions]['mission_name']}\n",
             f"• ID : {data[missions]['mission_id']}\n",

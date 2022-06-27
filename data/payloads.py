@@ -6,7 +6,12 @@ def payloads_requests():
     request = requests.get(url)
     data = request.json()
 
+    counter = 0
     for payloads in range(len(data)):
+        counter += 1
+        if counter > 2:
+            input("Continue...")
+            counter = 0
         print(
             f"• ID : {data[payloads]['payload_id']}\n",
             f"• Reused : {data[payloads]['reused']}\n",

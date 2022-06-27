@@ -6,9 +6,14 @@ def cores_requests():
     request = requests.get(url)
     data = request.json()
 
+    counter = 0
     for cores in range(len(data)):
         for mission in range(len(data[cores]['missions'])):
             if not mission:
+                counter += 1
+                if counter > 2:
+                    input("Continue...")
+                    counter = 0
                 print(
                     f"Cores : {data[cores]['core_serial']} -> \n",
                     f"• STATUS : {data[cores]['status']}\n",
