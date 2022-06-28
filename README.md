@@ -35,7 +35,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 ## Menu
 
-![SpaceX-Img](/image/SpaceX-Readme.png)
+![SpaceX-Img](/image/SpaceX-Readme.gif)
 
 
 
