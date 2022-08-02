@@ -39,4 +39,4 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 
 
-#### By Kijusu#9602 <3
+#### By Kijusu#9602
